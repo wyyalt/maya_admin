@@ -2,15 +2,18 @@
 {% load static %}
 {% load maya_form %}
 
-
 {% block css %}
     <link rel="stylesheet" href="{% static 'maya/css/form-control.css' %}"/>
 {% endblock %}
 
 {% block content %}
-    <div>
-        {{ formf.username }}
-        <h1>修改数据</h1>
-        {% show_form form %}
+    <div class="panel">
+        <div class="panel-heading">
+            <h2 class="panel-title">修改数据</h2>
+        </div>
+        <div class="panel-body">
+            {% show_form form %}
+        </div>
+
     </div>
 {% endblock %}

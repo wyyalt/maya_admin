@@ -515,6 +515,7 @@ class MayaSite(object):
 
             user = request.POST.get('username')
             pwd = request.POST.get('password')
+
             obj = models.User.objects.filter(username=user, password=pwd).first()
             if obj:
                 rbac.initial_permission(request, obj)
@@ -531,7 +532,8 @@ class MayaSite(object):
         :param request: 
         :return: 
         """
-        pass
+        request.session.delete(request.session.session_key)
+        return redirect('/maya/login/')
 
     def index(self, request):
         """

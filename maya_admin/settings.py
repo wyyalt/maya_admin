@@ -141,7 +141,8 @@ RBAC_MATCH_PARTTERN = "^{0}$"
 
 # 无需权限控制的URL
 RBAC_NO_AUTH_URL = [
-    '/maya/login',
+    '/maya/login/',
+    '/maya/logout/',
     '/maya/',
 ]
 

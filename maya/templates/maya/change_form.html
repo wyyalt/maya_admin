@@ -1,7 +1,7 @@
-<form class="form-horizontal" method="POST" novalidate>
+<form style="margin-top: 10px" class="form-horizontal" method="POST" novalidate>
     {% csrf_token %}
     {% for col in form %}
-        <div class="form-group col-sm-6">
+        <div class="form-group">
             <label class="col-sm-3 control-label">
                 {% if col.item.field.label %}
                     {{ col.item.field.label }}
@@ -10,12 +10,10 @@
                 {% endif %}
 
             </label>
-            <div class="col-sm-9" style="position: relative">
+            <div class="col-sm-4" style="position: relative">
                 {{ col.item }}
                 {% if col.popup %}
-                    <div style="position: absolute;right: -5px;top: 8px;z-index: 9999;"><a
-                            href="javascript:openPopup('{{ col.popup_url }}');"
-                            class="glyphicon glyphicon-search"></a></div>
+                    <div style="position: absolute;right: -10px;top: 8px;"><a href="javascript:openPopup('{{ col.popup_url }}');" class="glyphicon glyphicon-search"></a></div>
                 {% endif %}
                 {{ col.item.errors.0 }}
             </div>

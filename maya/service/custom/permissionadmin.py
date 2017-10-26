@@ -7,6 +7,8 @@ class PermissionAdmin(admin.BaseMayaModel):
     #option函数
     from maya.service.custom.common import option
 
+    from maya.service.custom.common import checkbox
+
     # 搜索自定义函数
     def caption(self, option, request):
         from maya.service.admin import FilterList
@@ -33,4 +35,4 @@ class PermissionAdmin(admin.BaseMayaModel):
         else:
             return "%s ---> %s"%(model_obj.caption,model_obj.url)
 
-    list_display = ['id',permission_url,'menu',option]
+    list_display = [checkbox,'id',permission_url,'menu',option]

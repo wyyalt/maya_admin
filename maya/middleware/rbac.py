@@ -17,18 +17,20 @@ class RbacMiddleware(MiddlewareMixin):
         :param kwargs: 
         :return: 
         """
+        # """跳过无需权限访问的URL"""
+        # for pattern in settings.RBAC_NO_AUTH_URL:
+        #     if re.match(settings.RBAC_MATCH_PARTTERN.format(pattern), request.path_info):
+        #         if request.path_info == "/maya/" and request.session.get('userinfo'):
+        #             break
+        #         return None
 
-        """跳过无需权限访问的URL"""
-        for pattern in settings.RBAC_NO_AUTH_URL:
-            #print(request.path_info)
-            if re.match(pattern, request.path_info):
-                return None
+
 
         """获取当前用户session中的权限信息"""
-        permission_url_list = request.session.get(settings.RBAC_PERMISSION_URL_SESSION_KEY)
+        permission_url_list = request.session.get(settings.RBAC_PERMISSION_URL_SESSION_KEY,[]) + settings.RBAC_NO_AUTH_URL
         #print(permission_url_list)
-        if not permission_url_list:
-            return HttpResponse(settings.RBAC_PERMISSION_MSG)
+        # if not permission_url_list:
+        #     return HttpResponse(settings.RBAC_PERMISSION_MSG)
 
         """当前URL和session中的权限进行匹配"""
         flag = False

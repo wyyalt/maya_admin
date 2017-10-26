@@ -10,17 +10,11 @@
     <!--STYLESHEET-->
     <!--=================================================-->
 
-    <!--Open Sans Font [ OPTIONAL ] -->
-     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">
-
-
     <!--Bootstrap Stylesheet [ REQUIRED ]-->
     <link href="/static/nifty/css/bootstrap.min.css" rel="stylesheet">
 
-
     <!--Nifty Stylesheet [ REQUIRED ]-->
     <link href="/static/nifty/css/nifty.min.css" rel="stylesheet">
-
 
     <!--Premium Icons [ OPTIONAL ]-->
     <link href="/static/nifty/premium/icon-sets/icons/line-icons/premium-line-icons.min.css" rel="stylesheet">
@@ -35,19 +29,16 @@
     <link href="/static/nifty/css/pace.min.css" rel="stylesheet">
     <script src="/static/nifty/js/pace.min.js"></script>
 
-
     <!--jQuery [ REQUIRED ]-->
     <script src="/static/nifty/js/jquery.min.js"></script>
-
+    {% block js %}{% endblock %}
 
     <!--BootstrapJS [ RECOMMENDED ]-->
     <script src="/static/nifty/js/bootstrap.min.js"></script>
 
-    
     <!--Nifty Admin [ RECOMMENDED ]-->
     <script src="/static/nifty/js/nifty.min.js"></script>
 
-    
 </head>
 
 <!--TIPS-->
@@ -131,7 +122,7 @@
 
                                 <!-- Dropdown footer -->
                                 <div class="pad-all text-right">
-                                    <a href="pages-login.html" class="btn btn-primary">
+                                    <a href="/maya/logout/" class="btn btn-primary">
                                         <i class="pli-unlock icon-fw"></i> Logout
                                     </a>
                                 </div>
@@ -160,28 +151,17 @@
             <!--CONTENT CONTAINER-->
             <!--===================================================-->
             <div id="content-container">
-                
-                <!--Page Title-->
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <div id="page-title">
-                    <h1 class="page-header text-overflow">MAYA ADMIN</h1>
-                </div>
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <!--End page title-->
-
 
                 <!--Breadcrumb-->
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <div style="height: 35px;line-height: 35px;margin-bottom: 5px" class="panel">
                 <ol class="breadcrumb">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Library</a></li>
-                    <li class="active">Data</li>
+                    {% breadcrumb request %}
                 </ol>
+                </div>
+
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                 <!--End breadcrumb-->
-
-
-        
 
                 <!--Page content-->
                 <!--===================================================-->
@@ -190,7 +170,6 @@
                 </div>
                 <!--===================================================-->
                 <!--End page content-->
-
 
             </div>
             <!--===================================================-->
@@ -234,7 +213,7 @@
                                         <a href="#" class="list-group-item">
                                             <i class="pli-information icon-lg icon-fw"></i> Help
                                         </a>
-                                        <a href="#" class="list-group-item">
+                                        <a href="/maya/logout/" class="list-group-item">
                                             <i class="pli-unlock icon-lg icon-fw"></i> Logout
                                         </a>
                                     </div>
@@ -285,9 +264,9 @@
 						
 						            <!--Menu list item-->
 						            <li class="active-link">
-						                <a href="#">
+						                <a href="/maya/">
 						                    <i class="psi-quill-2"></i>
-						                    <span class="menu-title">Active state</span>
+						                    <span class="menu-title">Main Page</span>
 						                </a>
 						            </li>
 						
@@ -300,8 +279,6 @@
                                     {% rbac_menu request %}
 						
                                 </ul>
-
-
 
                             </div>
                         </div>
@@ -356,12 +333,7 @@
                                 <div class="tab-pane fade in active" id="demo-asd-tab-1">
                                     <p class="pad-all text-lg">First tab</p>
                                     <div class="pad-hor">
-                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                        Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                                        ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate
-                                        velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan
-                                        et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                                        content
                                     </div>
                                 </div>
                                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -373,12 +345,7 @@
                                 <div class="tab-pane fade" id="demo-asd-tab-2">
                                     <p class="pad-all text-lg">Second tab</p>
                                     <div class="pad-hor">
-                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                        Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                                        ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate
-                                        velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan
-                                        et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                                        content
                                     </div>
                                 </div>
                                 <!--End second tab-->
@@ -390,12 +357,7 @@
                                 <div class="tab-pane fade" id="demo-asd-tab-3">
                                     <p class="pad-all text-lg">Third tab</p>
                                     <div class="pad-hor">
-                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                        Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                                        ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate
-                                        velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan
-                                        et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                                        content
                                     </div>
                                 </div>
                                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->

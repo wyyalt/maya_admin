@@ -49,3 +49,9 @@ def option(self, model_obj=None, is_header=False):
         """.format(edit_url, del_url, detail_url)
 
         return mark_safe(option)
+
+def checkbox(self, model_obj=None, is_header=False):
+    if is_header:
+        return mark_safe("<input id='check_all' type='checkbox'>")
+    else:
+        return mark_safe("<input name='pk' type='checkbox' value='{0}'>".format(model_obj.pk))
