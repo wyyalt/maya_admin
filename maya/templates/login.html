@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page | Maya Admin</title>
+
+
+    <!--STYLESHEET-->
+    <!--=================================================-->
+
+    <!--Bootstrap Stylesheet [ REQUIRED ]-->
+    <link href="/static/nifty/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!--Nifty Stylesheet [ REQUIRED ]-->
+    <link href="/static/nifty/css/nifty.min.css" rel="stylesheet">
+
+
+</head>
+
+<!--TIPS-->
+<!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
+
+<body>
+    <div id="container" class="cls-container">
+        
+		<!-- LOGIN FORM -->
+		<!--===================================================-->
+		<div class="cls-content">
+		    <div class="cls-content-sm panel">
+		        <div class="panel-body">
+		            <div class="mar-ver pad-btm">
+		                <h1 class="h2">Account Login</h1>
+		                <p>Sign In to your account</p>
+		            </div>
+		            <form method="POST">
+                        {% csrf_token %}
+		                <div class="form-group">
+		                    <input type="text" name="username" class="form-control" placeholder="Username" autofocus>
+		                </div>
+		                <div class="form-group">
+		                    <input type="password" name="password" class="form-control" placeholder="Password">
+		                </div>
+		                <button class="btn btn-primary btn-lg btn-block" type="submit">登录</button>
+		            </form>
+		        </div>
+		    </div>
+		</div>
+		<!--===================================================-->
+
+    </div>
+    <!--===================================================-->
+    <!-- END OF CONTAINER -->
+
+
+    </body>
+</html>

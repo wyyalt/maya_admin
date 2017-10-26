@@ -1,0 +1,13 @@
+
+<div class="input-group" style="float: left">
+  <select type="text" name="action" class="form-control" style="display: inline-block;width: 200px;" aria-label="...">
+    <option value>请选择Action</option>
+    {% for item in actions %}
+        <option value="{{ item.0 }}">{{ item.1 }}</option>
+    {% endfor %}
+  </select>
+  <div class="input-group-btn pull-left">
+    <!-- Buttons -->
+      <input style="padding-bottom: 7px" class="btn btn-info" type="submit" value="GO"/>
+  </div>
+</div>
